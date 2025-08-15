@@ -7,6 +7,11 @@ import LinkButton from "./LinkButton.astro"
 import ReactJS from "./icons/ReactJS.astro"
 import AstroJS from "./icons/AstroJS.astro"
 import Django from "./icons/Django.astro"
+import FastApi from "./icons/FastApi.astro"
+import ReactRouter from "./icons/ReactRouter.astro"
+import Postgres from "./icons/Postgres.astro"
+import Python from "./icons/Python.astro"
+import Tensorflow from "./icons/Tensorflow.astro"
 
 const TAGS = {
   NEXT: {
@@ -34,6 +39,31 @@ const TAGS = {
     class: "bg-[#092E20] text-white",
     icon: Django,
   },
+  FASTAPI: {
+    name: "FastAPI",
+    class: "bg-[#092E20] text-white",
+    icon: FastApi,
+  },
+  REACTROUTER: {
+    name: "React Router",
+    class: "bg-[#61DBFB] text-white",
+    icon: ReactRouter,
+  },
+  POSTGRES: {
+    name: "PostgreSQL",
+    class: "bg-[#092E20] text-white",
+    icon: Postgres,
+  },
+  PYTHON: {
+    name: "Python",
+    class: "bg-[#092E20] text-white",
+    icon: Python,
+  },
+  TENSORFLOW: {
+    name: "TensorFlow",
+    class: "bg-[#092E20] text-white",
+    icon: Tensorflow,
+  },
 };
 const PROJECTS = [
   {
@@ -43,7 +73,31 @@ const PROJECTS = [
     github: "https://github.com/",
     image: '/projects/dixbase_logo2.webp',
     tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND],
-  }
+  },
+  {
+    title: 'OpiCuba',
+    description: 'Aplicación web completa diseñada para gestionar la comunicación a través de Facebook Messenger. Su propósito principal es extraer mensajes de conversaciones, clasificarlos automáticamente mediante un modelo de Machine Learning y presentarlos en una interfaz de usuario intuitiva que permite su análisis y gestión.',
+    // link: 'https://dixbase.com',
+    github: "https://github.com/ale-01cu/z17-MITRANS",
+    image: '/projects/OpiCuba.webp',
+    tags: [TAGS.REACTROUTER, TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO, TAGS.POSTGRES],
+  },
+  {
+    title: 'Messenger Bot',
+    description: 'Bot automatizado diseñado para interactuar con la aplicación de web de Facebook Messenger. A diferencia de los bots tradicionales que usan APIs, este opera a través de **visión artificial (Computer Vision)** para "ver" la pantalla, interpretar la interfaz gráfica y simular las acciones de un usuario humano. El objetivo principal del bot es **scrapear (extraer) mensajes de conversaciones**. Para ello, utiliza técnicas de procesamiento de imágenes para localizar elementos en la pantalla, controla el ratón y el teclado para navegar, y emplea OCR (Reconocimiento Óptico de Caracteres) para convertir en texto los píxeles de los mensajes.',
+    // link: 'https://dixbase.com',
+    github: "https://github.com/ale-01cu/z17-MITRANS/tree/main/machine_learning/bot",
+    image: '/projects/OpiCubaBot.webp',
+    tags: [TAGS.PYTHON],
+  },
+  {
+    title: 'Sistema de Recomendación',
+    description: 'Sistema de recomendaciones construido con FastAPI y TensorFlow. Proporciona una API para entrenar, gestionar y utilizar modelos de recomendación. El sistema está diseñado en torno a un pipeline de varias etapas que incluye la recuperación de candidatos y la clasificación (ranking) para generar recomendaciones personalizadas.',
+    // link: 'https://dixbase.com',
+    github: "https://github.com/ale-01cu/Picta-Project/tree/main/recommender_engine/backend",
+    image: '/projects/Recommender.webp',
+    tags: [TAGS.PYTHON, TAGS.FASTAPI, TAGS.TENSORFLOW],
+  },
   // {
   //   title: "SVGL - A beautiful library with SVG logos",
   //   description:
@@ -79,7 +133,7 @@ const PROJECTS = [
       {title}
     </h3>
     <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
+      <ul class="flex flex-row flex-wrap mb-2 gap-2">
           {tags.map((tag) => (
             <li>
               <span
