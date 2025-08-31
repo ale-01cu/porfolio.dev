@@ -1,29 +1,40 @@
 ---
-const currentYear = new Date().getFullYear()
+import MailIcon from "./icons/Mail.astro"
+import Whatsapp from "./icons/Whatsapp.astro"
+import LinkedInIcon from "./icons/LinkedIn.astro"
 ---
 
 <footer
+  id="contacto"
   class="opacity-80 m-4 min-[375px]:pl-4 md:pl-0 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
 >
   <div
     class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
   >
-    <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
-      >&copy; {currentYear}
-      <a href="https://midu.dev/" class="hover:underline">midudev</a>. Casi
-      todos los derechos reservados
-    </span>
-    <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
-    >
+
+    <div></div>
+
+    <ul class="flex gap-4 text-sm font-medium dark:text-white/90">
       <li>
-        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
+        <a class="flex items-center gap-2 hover:border-b border-black/90 transition-all duration-100 dark:border-white/90" href="mailto:alejandro.figueroa.rodriguez.01@gmail.com">
+          <MailIcon class="size-4" />
+          Correo
+        </a>
       </li>
       <li>
-        <a id="contacto" href="mailto:miduga@gmail.com" class="hover:underline"
-          >Contacto</a
-        >
+        <a class="flex items-center gap-2 hover:border-b border-black/90 transition-all duration-100 dark:border-white/90" href="https://wa.me/55589662">
+          <Whatsapp class="!size-4" />
+          Whatsapp
+        </a>
+      </li>
+      <li>
+        <a class="flex items-center gap-2 hover:border-b border-black/90 transition-all duration-100 dark:border-white/90" href="https://www.linkedin.com/in/alejandro-figueroa-rodríguez-bb20562aa">
+          <LinkedInIcon class="size-4" />
+          LinkedIn
+        </a>
       </li>
     </ul>
+
+  
   </div>
 </footer>

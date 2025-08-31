@@ -12,6 +12,7 @@ import ReactRouter from "./icons/ReactRouter.astro"
 import Postgres from "./icons/Postgres.astro"
 import Python from "./icons/Python.astro"
 import Tensorflow from "./icons/Tensorflow.astro"
+import Opencv from './icons/Opencv.astro'
 
 const TAGS = {
   NEXT: {
@@ -64,6 +65,11 @@ const TAGS = {
     class: "bg-[#092E20] text-white",
     icon: Tensorflow,
   },
+  OPENCV: {
+    name: "OpenCV",
+    class: "bg-[#e9f2ee]/30 text-white",
+    icon: Opencv,
+  },
 };
 const PROJECTS = [
   {
@@ -88,7 +94,7 @@ const PROJECTS = [
     // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/z17-MITRANS/tree/main/machine_learning/bot",
     image: '/projects/messenger.webp',
-    tags: [TAGS.PYTHON],
+    tags: [TAGS.PYTHON, TAGS.OPENCV],
   },
   {
     title: 'Sistema de Recomendación',
