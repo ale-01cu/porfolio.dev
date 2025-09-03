@@ -13,6 +13,9 @@ import Postgres from "./icons/Postgres.astro"
 import Python from "./icons/Python.astro"
 import Tensorflow from "./icons/Tensorflow.astro"
 import Opencv from './icons/Opencv.astro'
+import Graphql from './icons/Graphql.astro'
+import Mongodb from './icons/Mongodb.astro'
+import Nodejs from "./icons/Nodejs.astro"
 
 const TAGS = {
   NEXT: {
@@ -47,7 +50,7 @@ const TAGS = {
   },
   REACTROUTER: {
     name: "React Router",
-    class: "bg-[#61DBFB] text-white",
+    class: "bg-[#61DBFB]/30 text-white",
     icon: ReactRouter,
   },
   POSTGRES: {
@@ -70,13 +73,28 @@ const TAGS = {
     class: "bg-[#e9f2ee]/30 text-white",
     icon: Opencv,
   },
+  NODEJS: {
+    name: "Node.js",
+    class: "bg-[#68a063]/30 text-white",
+    icon: Nodejs,
+  },
+  GRAPHQL: {
+    name: "GraphQL",
+    class: "bg-[#e535ab]/30 text-white",
+    icon: Graphql,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-[#13aa52]/50 text-white",
+    icon: Mongodb,
+  },
 };
 const PROJECTS = [
   {
     title: 'DixBase',
     description: 'Plataforma todo-en-uno para criptomonedas y finanzas digitales, diseñada tanto para principiantes como para expertos. Ofrecemos trading P2P seguro, billeteras digitales protegidas, pagos instantáneos con nuestra blockchain DixBlock y herramientas avanzadas con Inteligencia Artificial. Disfruta de un ecosistema confiable para comprar, vender y gestionar tus activos digitales, respaldado por tecnología de última generación y un equipo dedicado a la innovación financiera.',
     link: 'https://dixbase.com',
-    github: "https://github.com/",
+    // github: "https://github.com/",
     image: '/projects/dixbase_logo2.webp',
     tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND],
   },
@@ -103,6 +121,14 @@ const PROJECTS = [
     github: "https://github.com/ale-01cu/Picta-Project/tree/main/recommender_engine/backend",
     image: '/projects/Recommender.webp',
     tags: [TAGS.PYTHON, TAGS.FASTAPI, TAGS.TENSORFLOW],
+  },
+  {
+    title: 'Solaris',
+    description: 'Solaris es una aplicación fullstack inspirada en Instagram, desarrollada con tecnología moderna. Cuenta con una API completa con Node.js y GraphQL, y un cliente frontend responsivo desarrollado con React y NextUI.',
+    // link: 'https://dixbase.com',
+    github: "https://github.com/ale-01cu/solaris",
+    image: '/projects/solaris.webp',
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.NODEJS, TAGS.GRAPHQL, TAGS.MONGODB],
   },
   // {
   //   title: "SVGL - A beautiful library with SVG logos",
