@@ -16,6 +16,7 @@ import Opencv from './icons/Opencv.astro'
 import Graphql from './icons/Graphql.astro'
 import Mongodb from './icons/Mongodb.astro'
 import Nodejs from "./icons/Nodejs.astro"
+import Pandas from "./icons/Pandas.astro"
 
 const TAGS = {
   NEXT: {
@@ -30,7 +31,7 @@ const TAGS = {
   },
   REACT: {
     name: "React.js",
-    class: "border border-[#61DBFB] text-white",
+    class: "bg-[#61DBFB]/30 text-white",
     icon: ReactJS,
   },
   ASTRO: {
@@ -88,6 +89,11 @@ const TAGS = {
     class: "bg-[#13aa52]/50 text-white",
     icon: Mongodb,
   },
+  PANDAS: {
+    name: "Pandas",
+    class: "bg-[#555]/50 text-white",
+    icon: Pandas,
+  },
 };
 const PROJECTS = [
   {
@@ -120,7 +126,7 @@ const PROJECTS = [
     // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/Picta-Project/tree/main/recommender_engine/backend",
     image: '/projects/Recommender.webp',
-    tags: [TAGS.PYTHON, TAGS.FASTAPI, TAGS.TENSORFLOW],
+    tags: [TAGS.PYTHON, TAGS.FASTAPI, TAGS.TENSORFLOW, TAGS.PANDAS],
   },
   {
     title: 'Solaris',
@@ -136,6 +142,14 @@ const PROJECTS = [
     // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/home-project",
     image: '/projects/home.webp',
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO, TAGS.POSTGRES],
+  },
+  {
+    title: 'Magic',
+    description: 'Se trata de una plataforma de comercio electrónico integral con un backend basado en el framework REST de Django y un frontend basado en React. Incluye un conjunto completo de funciones para una tienda online moderna, desde la autenticación de usuarios hasta un sistema de recomendación de productos.',
+    // link: 'https://dixbase.com',
+    github: "https://github.com/ale-01cu/e-commerce",
+    image: '/projects/magic.webp',
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO, TAGS.POSTGRES],
   },
   // {
