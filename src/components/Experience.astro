@@ -1,21 +1,24 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
+import ExperienceItem from "./ExperienceItem.astro";
+import { getI18N } from "@/i18n/utils";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
 const EXPERIENCE = [
   {
-    date: "Junio 2024 - Actualmente...",
-    title: "Principal Frontend Engineer",
+    date: i18n.EXPERIENCE_DIXBASE_DATE,
+    title: i18n.EXPERIENCE_DIXBASE_TITLE,
     company: "DixBase",
-    description:
-      "Principal responsable del desarrollo frontend de la empresa, liderando el diseño, implementación y optimización de la interfaz de usuario para todos los sistemas internos y externos. Encargado de la arquitectura y lógica del lado del cliente, asegurando un alto rendimiento, accesibilidad y experiencia de usuario consistente en todos los proyectos.",
+    description: i18n.EXPERIENCE_DIXBASE_DESCRIPTION,
   },
   {
-    date: "Enero 2025 - Actualmente...",
-    title: "Desarrollador Fullstack",
+    date: i18n.EXPERIENCE_Z17_DATE,
+    title: i18n.EXPERIENCE_Z17_TITLE,
     company: "Empresa Mixta Z17",
-    description:
-      "Desarrollo integral de aplicaciones y sistemas de cualquier tipo, tanto frontend como backend, adaptados a las necesidades de los clientes. Participación en todas las fases del ciclo de vida del software, desde la planificación hasta el despliegue y mantenimiento.",
+    description: i18n.EXPERIENCE_Z17_DESCRIPTION,
   },
-]
+];
 ---
 
 <ol class="relative mt-16">

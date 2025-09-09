@@ -1,0 +1,98 @@
+---
+import { getI18N } from "@/i18n/utils";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const languages = {
+  es: {
+    name: "Español",
+    url: "/es/",
+  },
+  en: {
+    name: "English",
+    url: "/",
+  },
+};
+
+const { es, en } = languages;
+---
+
+<div class="relative ml-1 mr-1">
+  <button
+    id="language-toggle-btn"
+    class="appearance-none border-none flex hover:scale-125 transition"
+  >
+    <span class="sr-only">Change language</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon icon-tabler icon-tabler-language transition-all"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M4 5h7"></path>
+      <path d="M9 3v2c0 4.418 -2.239 8 -5 8"></path>
+      <path d="M5 9c0 2.144 2.952 3.908 6.7 4"></path>
+      <path d="M12 20l4 -9l4 9"></path>
+      <path d="M19.1 18h-6.2"></path>
+    </svg>
+  </button>
+  <div
+    id="language-menu"
+    class="absolute hidden scale-80 top-8 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/90 dark:bg-gray-900/90 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
+  >
+    <div class="flex flex-col">
+      {Object.values(languages).map((language) => (
+        <a class="cursor-pointer language-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm" href={language.url}>{language.name}</a>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  #language-menu.open {
+    display: inline;
+    animation: scale-up-center 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @keyframes scale-up-center {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  const langMenu = document.getElementById("language-menu");
+
+  document.getElementById("language-toggle-btn").addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isClosed = !langMenu.classList.contains("open");
+    langMenu.classList[isClosed ? "add" : "remove"]("open");
+  });
+
+  document.querySelectorAll(".language-menu-option").forEach((element) => {
+    element.addEventListener("click", (e) => {
+      const target = e.target as HTMLAnchorElement;
+      const href = target.getAttribute("href");
+      if (href) {
+        window.location.href = href;
+      }
+    });
+  });
+
+  document.addEventListener("click", () => langMenu.classList.remove("open"));
+</script>

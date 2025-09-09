@@ -1,7 +1,11 @@
 ---
-import MailIcon from "./icons/Mail.astro"
-import Whatsapp from "./icons/Whatsapp.astro"
-import LinkedInIcon from "./icons/LinkedIn.astro"
+import MailIcon from "./icons/Mail.astro";
+import Whatsapp from "./icons/Whatsapp.astro";
+import LinkedInIcon from "./icons/LinkedIn.astro";
+import { getI18N } from "@/i18n/utils";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <footer
@@ -18,19 +22,19 @@ import LinkedInIcon from "./icons/LinkedIn.astro"
       <li>
         <a class="flex items-center gap-2 hover:border-b border-black/90 transition-all duration-100 dark:border-white/90" href="mailto:alejandro.figueroa.rodriguez.01@gmail.com">
           <MailIcon class="size-4" />
-          Correo
+          {i18n.FOOTER_EMAIL}
         </a>
       </li>
       <li>
         <a class="flex items-center gap-2 hover:border-b border-black/90 transition-all duration-100 dark:border-white/90" href="https://wa.me/55589662">
           <Whatsapp class="!size-4" />
-          Whatsapp
+          {i18n.FOOTER_WHATSAPP}
         </a>
       </li>
       <li>
         <a class="flex items-center gap-2 hover:border-b border-black/90 transition-all duration-100 dark:border-white/90" href="https://www.linkedin.com/in/alejandro-figueroa-rodríguez-bb20562aa">
           <LinkedInIcon class="size-4" />
-          LinkedIn
+          {i18n.FOOTER_LINKEDIN}
         </a>
       </li>
     </ul>

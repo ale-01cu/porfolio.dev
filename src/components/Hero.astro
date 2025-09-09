@@ -1,11 +1,15 @@
 ---
-const personalImageAlt = "Miguel Ángel"
-import Badge from "@/components/Badge.astro"
-import LinkedInIcon from "@/components/icons/LinkedIn.astro"
-import MailIcon from "@/components/icons/Mail.astro"
-import SocialPill from "@/components/SocialPill.astro"
-import Phone from "./icons/phone.astro"
-import Whatsapp from "./icons/Whatsapp.astro"
+import Badge from "@/components/Badge.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import SocialPill from "@/components/SocialPill.astro";
+import Whatsapp from "./icons/Whatsapp.astro";
+import { getI18N } from "@/i18n/utils";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const personalImageAlt = "Alejandro Figueroa Rodríguez";
+
 ---
 
 <div class="max-w-xl">
@@ -21,34 +25,35 @@ import Whatsapp from "./icons/Whatsapp.astro"
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <Badge>Disponible para trabajar</Badge>
+      <Badge>{i18n.HERO_BADGE}</Badge>
     </a>
   </div>
   <h1
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
-    Hey, soy Alejandro
+    {i18n.HERO_GREETING}
   </h1>
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
-    5 años de experiencia. <strong
-      >Ingeniero de Software</strong
-    > de La Habana, Cuba. Especializado en el desarrollo de aplicaciones web
-    únicas.
+    {i18n.HERO_DESCRIPTION_1} 
+    <strong>
+      {i18n.HERO_DESCRIPTION_2}
+    </strong>
+    {i18n.HERO_DESCRIPTION_3}
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:alejandro.figueroa.rodriguez.01@gmail.com">
       <MailIcon class="size-4" />
-      Correo
+      {i18n.HERO_EMAIL_SOCIAL_PILL}
     </SocialPill>
     <SocialPill href="https://wa.me/55589662">
       <Whatsapp class="!size-4" />
-      Whatsapp
+      {i18n.HERO_WHATSAPP_SOCIAL_PILL}
     </SocialPill>
     <SocialPill href="https://www.linkedin.com/in/alejandro-figueroa-rodríguez-bb20562aa">
       <LinkedInIcon class="size-4" />
-      LinkedIn
+      {i18n.HERO_LINKEDIN_SOCIAL_PILL}
     </SocialPill>
   </nav>
 </div>

@@ -1,23 +1,27 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
-import ReactJS from "./icons/ReactJS.astro"
-import AstroJS from "./icons/AstroJS.astro"
-import Django from "./icons/Django.astro"
-import FastApi from "./icons/FastApi.astro"
-import ReactRouter from "./icons/ReactRouter.astro"
-import Postgres from "./icons/Postgres.astro"
-import Python from "./icons/Python.astro"
-import Tensorflow from "./icons/Tensorflow.astro"
-import Opencv from './icons/Opencv.astro'
-import Graphql from './icons/Graphql.astro'
-import Mongodb from './icons/Mongodb.astro'
-import Nodejs from "./icons/Nodejs.astro"
-import Pandas from "./icons/Pandas.astro"
-import DjangoRest from "./icons/DjangoRest.astro"
+import GitHub from "./icons/GitHub.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import ReactJS from "./icons/ReactJS.astro";
+import AstroJS from "./icons/AstroJS.astro";
+import Django from "./icons/Django.astro";
+import FastApi from "./icons/FastApi.astro";
+import ReactRouter from "./icons/ReactRouter.astro";
+import Postgres from "./icons/Postgres.astro";
+import Python from "./icons/Python.astro";
+import Tensorflow from "./icons/Tensorflow.astro";
+import Opencv from "./icons/Opencv.astro";
+import Graphql from "./icons/Graphql.astro";
+import Mongodb from "./icons/Mongodb.astro";
+import Nodejs from "./icons/Nodejs.astro";
+import Pandas from "./icons/Pandas.astro";
+import DjangoRest from "./icons/DjangoRest.astro";
+import { getI18N } from "@/i18n/utils";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
 const TAGS = {
   NEXT: {
@@ -104,7 +108,7 @@ const TAGS = {
 const PROJECTS = [
   {
     title: 'DixBase',
-    description: 'Plataforma todo-en-uno para criptomonedas y finanzas digitales, diseñada tanto para principiantes como para expertos. Ofrecemos trading P2P seguro, billeteras digitales protegidas, pagos instantáneos con nuestra blockchain DixBlock y herramientas avanzadas con Inteligencia Artificial. Disfruta de un ecosistema confiable para comprar, vender y gestionar tus activos digitales, respaldado por tecnología de última generación y un equipo dedicado a la innovación financiera.',
+    description: i18n.PROJECT_DIXBASE_DESCRIPTION,
     link: 'https://dixbase.com',
     // github: "https://github.com/",
     image: '/projects/dixbase_logo2.webp',
@@ -112,7 +116,7 @@ const PROJECTS = [
   },
   {
     title: 'OpiCuba',
-    description: 'Aplicación web completa diseñada para gestionar la comunicación a través de Facebook Messenger. Su propósito principal es extraer mensajes de conversaciones, clasificarlos automáticamente mediante un modelo de Machine Learning y presentarlos en una interfaz de usuario intuitiva que permite su análisis y gestión.',
+    description: i18n.PROJECT_OPICUBA_DESCRIPTION,
     // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/z17-MITRANS",
     image: '/projects/OpiCuba.webp',
@@ -120,7 +124,7 @@ const PROJECTS = [
   },
   {
     title: 'Bot de Facebook Messenger',
-    description: 'Bot automatizado diseñado para interactuar con la aplicación de web de Facebook Messenger. A diferencia de los bots tradicionales que usan APIs, este opera a través de **visión artificial (Computer Vision)** para "ver" la pantalla, interpretar la interfaz gráfica y simular las acciones de un usuario humano. El objetivo principal del bot es **scrapear (extraer) mensajes de conversaciones**. Para ello, utiliza técnicas de procesamiento de imágenes para localizar elementos en la pantalla, controla el ratón y el teclado para navegar, y emplea OCR (Reconocimiento Óptico de Caracteres) para convertir en texto los píxeles de los mensajes.',
+    description: i18n.PROJECT_MESSENGER_BOT_DESCRIPTION,
     // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/z17-MITRANS/tree/main/machine_learning/bot",
     image: '/projects/messenger.webp',
@@ -128,7 +132,7 @@ const PROJECTS = [
   },
   {
     title: 'Sistema de Recomendación',
-    description: 'Sistema de recomendaciones construido con FastAPI y TensorFlow. Proporciona una API para entrenar, gestionar y utilizar modelos de recomendación. El sistema está diseñado en torno a un pipeline de varias etapas que incluye la recuperación de candidatos y la clasificación (ranking) para generar recomendaciones personalizadas.',
+    description: i18n.PROJECT_RECOMMENDATION_SYSTEM_DESCRIPTION,
     // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/Picta-Project/tree/main/recommender_engine/backend",
     image: '/projects/Recommender.webp',
@@ -136,7 +140,7 @@ const PROJECTS = [
   },
   {
     title: 'Solaris',
-    description: 'Solaris es una aplicación fullstack inspirada en Instagram, desarrollada con tecnología moderna. Cuenta con una API completa con Node.js y GraphQL, y un cliente frontend responsivo desarrollado con React y NextUI.',
+    description: i18n.PROJECT_SOLARIS_DESCRIPTION,
     // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/solaris",
     image: '/projects/solaris.webp',
@@ -144,7 +148,7 @@ const PROJECTS = [
   },
   {
     title: 'Home',
-    description: 'Esta es una aplicación web integral para la transmisión de contenido de video, desarrollada con Django y React. Ofrece una plataforma integral para que los usuarios exploren, busquen y vean un catálogo de películas y series, similar a los servicios de streaming más populares.',
+    description: i18n.PROJECT_HOME_DESCRIPTION,
     // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/home-project",
     image: '/projects/home.webp',
@@ -152,7 +156,7 @@ const PROJECTS = [
   },
   {
     title: 'Magic',
-    description: 'Se trata de una plataforma de comercio electrónico integral con un backend basado en el framework REST de Django y un frontend basado en React. Incluye un conjunto completo de funciones para una tienda online moderna, desde la autenticación de usuarios hasta un sistema de recomendación de productos.',
+    description: i18n.PROJECT_MAGIC_DESCRIPTION,
     // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/e-commerce",
     image: '/projects/magic.webp',
@@ -160,29 +164,12 @@ const PROJECTS = [
   },
   {
     title: "MeatChef's Kitchen",
-    description: "MeatChef's Kitchen es una aplicación integral diseñada como plataforma en línea para una carnicería premium. Combina un sistema de comercio electrónico para productos cárnicos con un sistema de gestión del aprendizaje para cursos de cocina. La plataforma admite diversos roles de usuario, como clientes, personal, profesores y administradores, cada uno con permisos y funcionalidades personalizadas.",
+    description: i18n.PROJECT_MEATCHEF_DESCRIPTION,
     // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/MeatChef-s-Kitchen",
     image: '/projects/chef.webp',
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO, TAGS.DJANGOREST, TAGS.POSTGRES],
   },
-  // {
-  //   title: "SVGL - A beautiful library with SVG logos",
-  //   description:
-  //     "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-  //   link: "https://svgl.vercel.app/",
-  //   github: "https://github.com/pheralb/svgl",
-  //   image: "/projects/svgl.webp",
-  //   tags: [TAGS.NEXT, TAGS.TAILWIND],
-  // },
-  // {
-  //   title: "AdventJS - Retos de programación con JavaScript y TypeScript",
-  //   description:
-  //     "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-  //   link: "https://adventjs.dev",
-  //   image: "/projects/adventjs.webp",
-  //   tags: [TAGS.NEXT, TAGS.TAILWIND],
-  // },
 ]
 ---
 
@@ -219,14 +206,13 @@ const PROJECTS = [
           {github && (
             <LinkButton href={github}>
               <GitHub class="size-6" />
-              Code
-              
+              {i18n.PROJECT_CODE_BUTTON}
             </LinkButton>
           )}
           {link && (
             <LinkButton href={link}>
               <Link class="size-4" />
-              Preview
+              {i18n.PROJECT_PREVIEW_BUTTON}
             </LinkButton>
           )}
         </footer>
