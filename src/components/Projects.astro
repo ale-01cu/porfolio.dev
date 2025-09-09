@@ -17,6 +17,7 @@ import Graphql from './icons/Graphql.astro'
 import Mongodb from './icons/Mongodb.astro'
 import Nodejs from "./icons/Nodejs.astro"
 import Pandas from "./icons/Pandas.astro"
+import DjangoRest from "./icons/DjangoRest.astro"
 
 const TAGS = {
   NEXT: {
@@ -56,7 +57,7 @@ const TAGS = {
   },
   POSTGRES: {
     name: "PostgreSQL",
-    class: "bg-[#092E20] text-white",
+    class: "bg-[#0E9EE4]/50 text-white",
     icon: Postgres,
   },
   PYTHON: {
@@ -94,6 +95,11 @@ const TAGS = {
     class: "bg-[#555]/50 text-white",
     icon: Pandas,
   },
+  DJANGOREST: {
+    name: "Django Rest Framerwork",
+    class: "bg-[#772626]/50 text-white",
+    icon: DjangoRest,
+  },
 };
 const PROJECTS = [
   {
@@ -110,7 +116,7 @@ const PROJECTS = [
     // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/z17-MITRANS",
     image: '/projects/OpiCuba.webp',
-    tags: [TAGS.REACTROUTER, TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO, TAGS.POSTGRES],
+    tags: [TAGS.REACTROUTER, TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO, TAGS.DJANGOREST, TAGS.POSTGRES],
   },
   {
     title: 'Bot de Facebook Messenger',
@@ -142,7 +148,7 @@ const PROJECTS = [
     // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/home-project",
     image: '/projects/home.webp',
-    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO, TAGS.POSTGRES],
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO, TAGS.DJANGOREST, TAGS.POSTGRES],
   },
   {
     title: 'Magic',
@@ -150,7 +156,15 @@ const PROJECTS = [
     // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/e-commerce",
     image: '/projects/magic.webp',
-    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO, TAGS.POSTGRES],
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO, TAGS.DJANGOREST, TAGS.POSTGRES],
+  },
+  {
+    title: "MeatChef's Kitchen",
+    description: "MeatChef's Kitchen es una aplicación integral diseñada como plataforma en línea para una carnicería premium. Combina un sistema de comercio electrónico para productos cárnicos con un sistema de gestión del aprendizaje para cursos de cocina. La plataforma admite diversos roles de usuario, como clientes, personal, profesores y administradores, cada uno con permisos y funcionalidades personalizadas.",
+    // link: 'https://dixbase.com',
+    github: "https://github.com/ale-01cu/MeatChef-s-Kitchen",
+    image: '/projects/chef.webp',
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO, TAGS.DJANGOREST, TAGS.POSTGRES],
   },
   // {
   //   title: "SVGL - A beautiful library with SVG logos",
