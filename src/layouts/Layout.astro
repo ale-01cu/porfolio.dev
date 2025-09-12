@@ -12,18 +12,56 @@ interface Props {
 
 const { description, title } = Astro.props
 const { currentLocale } = Astro;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
 <html lang={currentLocale}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content="/porfolio.webp" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="porfolio" />
+    <meta property="og:locale" content={currentLocale} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/porfolio.webp" />
+
     <ViewTransitions />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Alejandro Figueroa",
+        "url": "https://porfolio.dev/",
+        "image": "/porfolio.webp",
+        "sameAs": [
+          "https://www.linkedin.com/in/alejandro-figueroa-rodríguez-bb20562aa"
+        ],
+        "jobTitle": "Software Engineer"
+      }
+    </script>
   </head>
 
   <body class="relative text-black dark:text-white">
