@@ -1,9 +1,4 @@
 ---
-import { getI18N } from "@/i18n/utils";
-
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
-
 const languages = {
   es: {
     name: "Español",
@@ -15,7 +10,6 @@ const languages = {
   },
 };
 
-const { es, en } = languages;
 ---
 
 <div class="relative ml-1 mr-1">
@@ -50,7 +44,7 @@ const { es, en } = languages;
   >
     <div class="flex flex-col">
       {Object.values(languages).map((language) => (
-        <a class="cursor-pointer language-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm" href={language.url}>{language.name}</a>
+        <a class="cursor-pointer language-menu-option px-2 py-1.5 hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm" href={language.url}>{language.name}</a>
       ))}
     </div>
   </div>
@@ -78,10 +72,10 @@ const { es, en } = languages;
 <script>
   const langMenu = document.getElementById("language-menu");
 
-  document.getElementById("language-toggle-btn").addEventListener("click", (e) => {
+  document.getElementById("language-toggle-btn")?.addEventListener("click", (e) => {
     e.stopPropagation();
-    const isClosed = !langMenu.classList.contains("open");
-    langMenu.classList[isClosed ? "add" : "remove"]("open");
+    const isClosed = !langMenu?.classList.contains("open");
+    langMenu?.classList[isClosed ? "add" : "remove"]("open");
   });
 
   document.querySelectorAll(".language-menu-option").forEach((element) => {
@@ -94,5 +88,5 @@ const { es, en } = languages;
     });
   });
 
-  document.addEventListener("click", () => langMenu.classList.remove("open"));
+  document.addEventListener("click", () => langMenu?.classList.remove("open"));
 </script>
