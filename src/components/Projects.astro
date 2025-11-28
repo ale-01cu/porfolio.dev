@@ -19,6 +19,7 @@ import Nodejs from "./icons/Nodejs.astro";
 import Pandas from "./icons/Pandas.astro";
 import DjangoRest from "./icons/DjangoRest.astro";
 import { getI18N } from "@/i18n/utils";
+import Vite from "./icons/Vite.astro";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
@@ -89,6 +90,11 @@ const TAGS = {
     class: "bg-[#e535ab]/30 text-white",
     icon: Graphql,
   },
+  VITE: {
+    name: "Vite",
+    class: "bg-[#646CFF]/30 text-white",
+    icon: Vite,
+  },
   MONGODB: {
     name: "MongoDB",
     class: "bg-[#13aa52]/50 text-white",
@@ -112,7 +118,7 @@ const PROJECTS = [
     link: 'https://dixbase.com',
     // github: "https://github.com/",
     image: '/projects/dixbase_logo2.webp',
-    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND],
+    tags: [TAGS.VITE, TAGS.REACT, TAGS.REACTROUTER, TAGS.TAILWIND],
   },
   {
     title: 'OpiCuba',

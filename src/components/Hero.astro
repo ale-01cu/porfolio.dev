@@ -56,7 +56,10 @@ const personalImageAlt = "Alejandro Figueroa Rodríguez";
       <LinkedInIcon class="size-4" />
       {i18n.HERO_LINKEDIN_SOCIAL_PILL}
     </SocialPill>
-    <SocialPill href="/Alejandro Figueroa RodrÍguez CV.pdf">
+    <SocialPill href={currentLocale === "es" 
+      ? "/Alejandro Figueroa RodrÍguez CV.pdf" 
+      : "/Alejandro Figueroa RodrÍguez CV en.pdf"
+    }>
       <CV class="size-4" />
       {i18n.HERO_CV_SOCIAL_PILL}
     </SocialPill>
