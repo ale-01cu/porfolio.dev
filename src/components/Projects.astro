@@ -27,103 +27,103 @@ const i18n = getI18N({ currentLocale });
 const TAGS = {
   NEXT: {
     name: "Next.js",
-    class: "bg-black text-white",
+    class: "bg-black/80 text-white border-gray-700",
     icon: NextJS,
   },
   TAILWIND: {
     name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
+    class: "bg-sky-500/20 text-sky-300 border-sky-500/30",
     icon: Tailwind,
   },
   REACT: {
     name: "React.js",
-    class: "bg-[#61DBFB]/30 text-white",
+    class: "bg-cyan-500/20 text-cyan-300 border-cyan-500/30",
     icon: ReactJS,
   },
   ASTRO: {
     name: "Astro.js",
-    class: "bg-[#FF5D01] text-white",
+    class: "bg-orange-500/20 text-orange-300 border-orange-500/30",
     icon: AstroJS,
   },
   DJANGO: {
     name: "Django",
-    class: "bg-[#092E20] text-white",
+    class: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
     icon: Django,
   },
   FASTAPI: {
     name: "FastAPI",
-    class: "bg-[#092E20] text-white",
+    class: "bg-teal-500/20 text-teal-300 border-teal-500/30",
     icon: FastApi,
   },
   REACTROUTER: {
     name: "React Router",
-    class: "bg-[#61DBFB]/30 text-white",
+    class: "bg-red-500/20 text-red-300 border-red-500/30",
     icon: ReactRouter,
   },
   POSTGRES: {
     name: "PostgreSQL",
-    class: "bg-[#0E9EE4]/50 text-white",
+    class: "bg-blue-500/20 text-blue-300 border-blue-500/30",
     icon: Postgres,
   },
   PYTHON: {
     name: "Python",
-    class: "bg-[#092E20] text-white",
+    class: "bg-yellow-500/20 text-yellow-300 border-yellow-500/30",
     icon: Python,
   },
   TENSORFLOW: {
     name: "TensorFlow",
-    class: "bg-[#092E20] text-white",
+    class: "bg-orange-500/20 text-orange-300 border-orange-500/30",
     icon: Tensorflow,
   },
   OPENCV: {
     name: "OpenCV",
-    class: "bg-[#e9f2ee]/30 text-white",
+    class: "bg-green-500/20 text-green-300 border-green-500/30",
     icon: Opencv,
   },
   NODEJS: {
     name: "Node.js",
-    class: "bg-[#68a063]/30 text-white",
+    class: "bg-lime-500/20 text-lime-300 border-lime-500/30",
     icon: Nodejs,
   },
   GRAPHQL: {
     name: "GraphQL",
-    class: "bg-[#e535ab]/30 text-white",
+    class: "bg-pink-500/20 text-pink-300 border-pink-500/30",
     icon: Graphql,
   },
   VITE: {
     name: "Vite",
-    class: "bg-[#646CFF]/30 text-white",
+    class: "bg-purple-500/20 text-purple-300 border-purple-500/30",
     icon: Vite,
   },
   MONGODB: {
     name: "MongoDB",
-    class: "bg-[#13aa52]/50 text-white",
+    class: "bg-green-500/20 text-green-300 border-green-500/30",
     icon: Mongodb,
   },
   PANDAS: {
     name: "Pandas",
-    class: "bg-[#555]/50 text-white",
+    class: "bg-indigo-500/20 text-indigo-300 border-indigo-500/30",
     icon: Pandas,
   },
   DJANGOREST: {
-    name: "Django Rest Framerwork",
-    class: "bg-[#772626]/50 text-white",
+    name: "Django Rest Framework",
+    class: "bg-rose-500/20 text-rose-300 border-rose-500/30",
     icon: DjangoRest,
   },
 };
+
 const PROJECTS = [
   {
     title: 'DixBase',
     description: i18n.PROJECT_DIXBASE_DESCRIPTION,
     link: 'https://dixbase.com',
-    // github: "https://github.com/",
     image: '/projects/dixbase_logo2.webp',
     tags: [TAGS.VITE, TAGS.REACT, TAGS.REACTROUTER, TAGS.TAILWIND],
+    featured: true,
   },
   {
     title: 'OpiCuba',
     description: i18n.PROJECT_OPICUBA_DESCRIPTION,
-    // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/z17-MITRANS",
     image: '/projects/OpiCuba.webp',
     tags: [TAGS.REACTROUTER, TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO, TAGS.DJANGOREST, TAGS.POSTGRES],
@@ -131,7 +131,6 @@ const PROJECTS = [
   {
     title: 'Bot de Facebook Messenger',
     description: i18n.PROJECT_MESSENGER_BOT_DESCRIPTION,
-    // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/z17-MITRANS/tree/main/machine_learning/bot",
     image: '/projects/messenger.webp',
     tags: [TAGS.PYTHON, TAGS.OPENCV],
@@ -139,7 +138,6 @@ const PROJECTS = [
   {
     title: 'Sistema de Recomendación',
     description: i18n.PROJECT_RECOMMENDATION_SYSTEM_DESCRIPTION,
-    // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/Picta-Project/tree/main/recommender_engine/backend",
     image: '/projects/Recommender.webp',
     tags: [TAGS.PYTHON, TAGS.FASTAPI, TAGS.TENSORFLOW, TAGS.PANDAS],
@@ -147,7 +145,6 @@ const PROJECTS = [
   {
     title: 'Solaris',
     description: i18n.PROJECT_SOLARIS_DESCRIPTION,
-    // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/solaris",
     image: '/projects/solaris.webp',
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.NODEJS, TAGS.GRAPHQL, TAGS.MONGODB],
@@ -155,7 +152,6 @@ const PROJECTS = [
   {
     title: 'Home',
     description: i18n.PROJECT_HOME_DESCRIPTION,
-    // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/home-project",
     image: '/projects/home.webp',
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO, TAGS.DJANGOREST, TAGS.POSTGRES],
@@ -163,7 +159,6 @@ const PROJECTS = [
   {
     title: 'Magic',
     description: i18n.PROJECT_MAGIC_DESCRIPTION,
-    // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/e-commerce",
     image: '/projects/magic.webp',
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO, TAGS.DJANGOREST, TAGS.POSTGRES],
@@ -171,7 +166,6 @@ const PROJECTS = [
   {
     title: "MeatChef's Kitchen",
     description: i18n.PROJECT_MEATCHEF_DESCRIPTION,
-    // link: 'https://dixbase.com',
     github: "https://github.com/ale-01cu/MeatChef-s-Kitchen",
     image: '/projects/chef.webp',
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO, TAGS.DJANGOREST, TAGS.POSTGRES],
@@ -179,55 +173,107 @@ const PROJECTS = [
 ]
 ---
 
-<div class="flex flex-col gap-y-16">
+<div class="flex flex-col gap-8 mt-12">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div>
+    PROJECTS.map(({ image, title, description, tags, link, github, featured }, index) => (
+      <article 
+        class={`project-card group relative overflow-hidden rounded-3xl bg-white/50 dark:bg-gray-900/50 border border-gray-200/50 dark:border-gray-800/50 backdrop-blur-sm transition-all duration-500 hover:border-amber-500/30 hover:shadow-2xl hover:shadow-amber-500/10 ${featured ? 'md:col-span-2' : ''}`}
+        style={`animation-delay: ${index * 100}ms`}
+      >
+        <div class="flex flex-col md:flex-row">
+          <!-- Image Section -->
+          <div class="relative overflow-hidden md:w-1/2">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
+            <img 
+              alt={title} 
+              class="w-full h-64 md:h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" 
+              loading="lazy" 
+              src={image} 
+            />
+            {featured && (
+              <div class="absolute top-4 left-4 z-20">
+                <span class="inline-flex items-center gap-1 px-3 py-1 text-xs font-medium text-amber-900 bg-amber-400 rounded-full">
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  Featured
+                </span>
+              </div>
+            )}
+          </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row flex-wrap mb-2 gap-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+          <!-- Content Section -->
+          <div class="flex flex-col justify-between p-6 md:p-8 md:w-1/2">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors duration-300">
+                {title}
+              </h3>
+              
+              <!-- Tags -->
+              <div class="flex flex-wrap gap-2 mb-4">
+                {tags.map((tag) => (
+                  <span
+                    class={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-lg border backdrop-blur-sm ${tag.class}`}
+                  >
+                    <tag.icon class="size-3.5" />
+                    {tag.name}
+                  </span>
+                ))}
+              </div>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              {i18n.PROJECT_CODE_BUTTON}
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              {i18n.PROJECT_PREVIEW_BUTTON}
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed line-clamp-4">
+                {description}
+              </p>
+            </div>
+
+            <!-- Action buttons -->
+            <footer class="flex flex-wrap items-center gap-3 mt-6 pt-6 border-t border-gray-200/50 dark:border-gray-800/50">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-5" />
+                  <span>{i18n.PROJECT_CODE_BUTTON}</span>
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link} primary>
+                  <Link class="size-4" />
+                  <span>{i18n.PROJECT_PREVIEW_BUTTON}</span>
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+
+        <!-- Hover glow effect -->
+        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+          <div class="absolute inset-0 bg-gradient-to-br from-amber-500/5 via-transparent to-orange-500/5"></div>
+        </div>
+      </article>
     ))
   }
 </div>
 
+<style>
+  .project-card {
+    opacity: 0;
+    animation: fade-up 0.6s ease-out forwards;
+  }
 
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
+  .line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

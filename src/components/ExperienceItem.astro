@@ -16,45 +16,73 @@ interface Props {
 const { title, company, description, link, date } = Astro.props;
 ---
 
-<div
-  class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
->
-  <div class="relative pb-12 md:col-span-2">
-    <div class="sticky top-0">
-      <span class="text-yellow-400 -left-[42px] absolute rounded-full text-5xl"
-        >&bull;</span
-      >
-
-      <h3 class="text-xl font-bold text-yellow-400">{title}</h3>
-      <h4 class="font-semibold text-xl text-gray-600 dark:text-white">{company}</h4>
-      <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">{date}</time>
+<div class="group relative pl-8 pb-12 md:pl-0 md:grid md:grid-cols-12 md:gap-8">
+  <!-- Timeline line -->
+  <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-amber-500/50 via-amber-500/20 to-transparent md:left-[calc(33.333%-0.5px)] hidden md:block"></div>
+  <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-amber-500/50 via-amber-500/20 to-transparent md:hidden"></div>
+  
+  <!-- Timeline dot -->
+  <div class="absolute left-0 top-1 -translate-x-1/2 md:left-[33.333%] z-10">
+    <div class="relative flex items-center justify-center">
+      <span class="absolute animate-ping h-4 w-4 rounded-full bg-amber-400/30"></span>
+      <span class="relative h-3 w-3 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 ring-4 ring-white dark:ring-gray-950 shadow-lg shadow-amber-500/30"></span>
     </div>
   </div>
-  <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
-    {description}
-    {
-      link && (
-        <LinkInline href={link}>
-          {i18n.EXPERIENCE_ITEM_MORE_INFO}{" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-5 icon icon-tabler icon-tabler-chevron-right"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <>
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 6l6 6l-6 6" />
-            </>
+  
+  <!-- Date column -->
+  <div class="md:col-span-4 md:text-right md:pr-8 mb-4 md:mb-0">
+    <div class="sticky top-24">
+      <time class="inline-flex items-center gap-2 text-sm font-medium text-amber-600 dark:text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        {date}
+      </time>
+    </div>
+  </div>
+
+  <!-- Content column -->
+  <div class="md:col-span-8 md:pl-8">
+    <div class="relative p-6 rounded-2xl bg-white/50 dark:bg-gray-900/50 border border-gray-200/50 dark:border-gray-800/50 backdrop-blur-sm transition-all duration-300 group-hover:border-amber-500/30 group-hover:shadow-lg group-hover:shadow-amber-500/5">
+      <!-- Glow effect on hover -->
+      <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      
+      <div class="relative">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
+          {title}
+        </h3>
+        <h4 class="text-lg font-semibold text-amber-600 dark:text-amber-400 mb-4 flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
           </svg>
-        </LinkInline>
-      )
-    }
+          {company}
+        </h4>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+          {description}
+        </p>
+        {
+          link && (
+            <div class="mt-4">
+              <LinkInline href={link}>
+                {i18n.EXPERIENCE_ITEM_MORE_INFO}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4 inline-block ml-1"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M9 6l6 6l-6 6" />
+                </svg>
+              </LinkInline>
+            </div>
+          )
+        }
+      </div>
+    </div>
   </div>
 </div>

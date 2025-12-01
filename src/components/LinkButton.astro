@@ -1,12 +1,23 @@
 ---
-const { href } = Astro.props;
+interface Props {
+  href: string;
+  primary?: boolean;
+}
+
+const { href, primary = false } = Astro.props;
 ---
 
 <a
-    target="_blank"
-    href={href}
-    role="link"
-    class="inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+  target="_blank"
+  href={href}
+  rel="noopener noreferrer"
+  role="link"
+  class:list={[
+    "inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-xl transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
+    primary 
+      ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-600 hover:to-orange-600 shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 focus-visible:ring-amber-500" 
+      : "bg-gray-100 text-gray-700 border border-gray-200 hover:bg-gray-200 hover:border-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:border-gray-600 focus-visible:ring-gray-500 dark:focus-visible:ring-offset-gray-900"
+  ]}
 >
-    <slot />
+  <slot />
 </a>

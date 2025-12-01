@@ -10,32 +10,36 @@ const i18n = getI18N({ currentLocale });
 const THEMES = ["Light", "Dark", "System"];
 ---
 
-<div class="relative ml-1 mr-1">
+<div class="relative">
   <button
     transition:persist
     id="theme-toggle-btn"
-    class="appearance-none border-none flex hover:scale-125 transition"
+    class="appearance-none border-none flex p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-all duration-300 hover:scale-110"
+    aria-label={i18n.THEME_TOGGLE_LABEL}
   >
     <span class="sr-only">{i18n.THEME_TOGGLE_LABEL}</span>
-    <SunIcon id="light" class="theme-toggle-icon size-5 transition-all" />
+    <SunIcon id="light" class="theme-toggle-icon size-5 text-amber-500 transition-all" />
     <MoonIcon
       id="dark"
-      class="theme-toggle-icon absolute size-5 transition-all"
+      class="theme-toggle-icon absolute size-5 text-blue-400 transition-all"
     />
     <SystemIcon
       id="system"
-      class="theme-toggle-icon absolute size-5 transition-all"
+      class="theme-toggle-icon absolute size-5 text-gray-500 transition-all"
     />
   </button>
   <div
     transition:persist
     id="themes-menu"
-    class="absolute hidden scale-80 top-8 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/90 dark:bg-gray-900/90 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
+    class="absolute hidden scale-80 top-full right-0 mt-2 text-sm p-2 min-w-[8rem] rounded-xl border border-gray-200/50 bg-white/95 dark:bg-gray-900/95 dark:border-gray-800/50 shadow-xl shadow-gray-200/20 dark:shadow-black/30 backdrop-blur-xl"
   >
-    <ul>
+    <ul class="space-y-1">
       {
         THEMES.map((theme) => (
-          <li class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm">
+          <li class="themes-menu-option flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-amber-500/10 hover:text-amber-600 dark:hover:text-amber-400 rounded-lg transition-colors duration-200 text-gray-700 dark:text-gray-300">
+            {theme === 'Light' && <SunIcon class="size-4" />}
+            {theme === 'Dark' && <MoonIcon class="size-4" />}
+            {theme === 'System' && <SystemIcon class="size-4" />}
             {theme}
           </li>
         ))
@@ -46,18 +50,18 @@ const THEMES = ["Light", "Dark", "System"];
 
 <style>
   #themes-menu.open {
-    display: inline;
-    animation: scale-up-center 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    display: block;
+    animation: scale-up-center 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) both;
   }
 
   @keyframes scale-up-center {
     from {
-      transform: scale(0.8);
+      transform: scale(0.9) translateY(-10px);
       opacity: 0;
     }
 
     to {
-      transform: scale(1);
+      transform: scale(1) translateY(0);
       opacity: 1;
     }
   }

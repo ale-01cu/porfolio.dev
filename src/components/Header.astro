@@ -31,22 +31,24 @@ const navItems = [
 ---
 
 <header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+  class="fixed top-0 z-50 flex items-center justify-center w-full mx-auto mt-4 px-4"
 >
   <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+    id="main-nav"
+    class="flex px-4 py-2 text-sm font-medium rounded-full text-gray-600 dark:text-gray-300 justify-center items-center gap-1 border border-gray-200/50 dark:border-white/10 bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl shadow-lg shadow-gray-200/20 dark:shadow-black/20"
   >
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500"
+          class="nav-link relative px-3 py-1.5 rounded-full transition-all duration-300 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-amber-500/10"
           aria-label={link.label}
           href={link.url}
         >
-          {link.title}
+          <span class="relative z-10">{link.title}</span>
         </a>
       ))
     }
+    <div class="w-px h-5 bg-gray-300 dark:bg-gray-700 mx-1"></div>
     <ThemeToggle />
     <LanguagePicker />
   </nav>
@@ -55,16 +57,16 @@ const navItems = [
 <script>
   document.addEventListener("astro:page-load", () => {
     const sections = document.querySelectorAll("section")
-    const navItems = document.querySelectorAll("header nav a")
+    const navItems = document.querySelectorAll("header nav .nav-link")
 
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-yellow-500")
+              item.classList.add("text-amber-600", "dark:text-amber-400", "bg-amber-500/10")
             } else {
-              item.classList.remove("text-yellow-500")
+              item.classList.remove("text-amber-600", "dark:text-amber-400", "bg-amber-500/10")
             }
           })
         }
@@ -96,21 +98,45 @@ const navItems = [
 
 <style>
   nav {
-    animation: nav-shadown 1s linear both;
-    animation-timeline: scroll();
-    animation-range: 0 100px;
+    animation: nav-appear 0.6s ease-out forwards;
   }
 
-  nav {
-    @apply dark:bg-neutral-900/90 bg-white/50;
-  }
-
-  @keyframes nav-shadown {
-    0% {
-      @apply dark:bg-gray-800/0 bg-white/0;
+  @keyframes nav-appear {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
     }
     to {
-      @apply shadow-lg ring-1 backdrop-blur ring-white/10;
+      opacity: 1;
+      transform: translateY(0);
     }
+  }
+
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(251, 191, 36, 0.1));
+  }
+
+  .nav-link:hover::before {
+    opacity: 1;
+  }
+
+  /* Active state indicator */
+  .nav-link.text-amber-600::after,
+  .nav-link.dark\:text-amber-400::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: currentColor;
   }
 </style>

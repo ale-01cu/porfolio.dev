@@ -1,5 +1,9 @@
 ---
 import "@fontsource-variable/onest"
+import "@fontsource/space-grotesk/400.css"
+import "@fontsource/space-grotesk/500.css"
+import "@fontsource/space-grotesk/600.css"
+import "@fontsource/space-grotesk/700.css"
 
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
@@ -65,18 +69,46 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </head>
 
   <body class="relative text-black dark:text-white">
-    <div
-      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
-      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(248,190,44,0.3),rgba(255,255,255,0))]"
-    >
+    <!-- Animated background -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+      <!-- Base gradient -->
+      <div class="absolute inset-0 bg-[#fafafa] dark:bg-[#0a0a0f]"></div>
+      
+      <!-- Grid pattern -->
+      <div class="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1a1a2e_1px,transparent_1px),linear-gradient(to_bottom,#1a1a2e_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+      
+      <!-- Glow orbs -->
+      <div class="absolute top-0 -left-40 w-80 h-80 bg-amber-400/20 dark:bg-amber-500/10 rounded-full blur-[120px] animate-pulse"></div>
+      <div class="absolute top-1/4 -right-40 w-96 h-96 bg-orange-300/20 dark:bg-orange-500/10 rounded-full blur-[120px] animate-pulse" style="animation-delay: 1s;"></div>
+      <div class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-yellow-300/15 dark:bg-yellow-500/5 rounded-full blur-[100px] animate-pulse" style="animation-delay: 2s;"></div>
+      
+      <!-- Noise texture overlay -->
+      <div class="absolute inset-0 opacity-[0.015] dark:opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url%28%23noise%29%22/%3E%3C/svg%3E');"></div>
     </div>
+
     <Header />
     <slot />
     <Footer />
+    
     <style is:global>
       :root {
         color-scheme: light dark;
+        --color-accent: #f59e0b;
+        --color-accent-light: #fbbf24;
+        --color-accent-dark: #d97706;
+        --color-surface: #ffffff;
+        --color-surface-elevated: #f5f5f5;
+        --color-text-primary: #0a0a0a;
+        --color-text-secondary: #525252;
+        --color-border: #e5e5e5;
+      }
+
+      .dark {
+        --color-surface: #0a0a0f;
+        --color-surface-elevated: #141420;
+        --color-text-primary: #fafafa;
+        --color-text-secondary: #a3a3a3;
+        --color-border: #262626;
       }
 
       html {
@@ -85,25 +117,99 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       }
 
       body {
-        color: rgba(17, 17, 17, 0.9);
+        color: var(--color-text-primary);
         display: flex;
         flex-direction: column;
         min-height: 100vh;
         overscroll-behavior: none;
       }
 
+      /* Smooth animations */
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      @keyframes slide-in-left {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .animate-fade-in-up {
+        animation: fade-in-up 0.6s ease-out forwards;
+      }
+
+      .animate-fade-in {
+        animation: fade-in 0.6s ease-out forwards;
+      }
+
+      .animate-slide-in-left {
+        animation: slide-in-left 0.6s ease-out forwards;
+      }
+
+      /* Staggered animation delays */
+      .animation-delay-100 { animation-delay: 100ms; }
+      .animation-delay-200 { animation-delay: 200ms; }
+      .animation-delay-300 { animation-delay: 300ms; }
+      .animation-delay-400 { animation-delay: 400ms; }
+      .animation-delay-500 { animation-delay: 500ms; }
+      .animation-delay-600 { animation-delay: 600ms; }
+
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
         }
-      }
-
-      @media (prefers-color-scheme: dark) {
-        body {
-          color: rgba(255, 255, 255, 0.9);
+        .animate-fade-in-up,
+        .animate-fade-in,
+        .animate-slide-in-left {
+          animation: none;
+          opacity: 1;
+          transform: none;
         }
       }
 
+      /* Selection styles */
+      ::selection {
+        background-color: var(--color-accent);
+        color: #000;
+      }
+
+      /* Scrollbar styles */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--color-surface);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--color-border);
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-text-secondary);
+      }
+
+      /* Header animation */
       #header-nav {
         animation: blur linear both 0.5s;
         animation-timeline: scroll();
@@ -114,12 +220,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         to {
           backdrop-filter: blur(20px);
           border-width: 1px;
-          border-color: rgba(0, 0, 0);
+          border-color: rgba(0, 0, 0, 0.1);
           padding: 0.25rem 0.75rem;
           display: flex;
           flex-direction: row;
           align-items: center;
-          background-color: rgb(229, 229, 229);
+          background-color: rgba(255, 255, 255, 0.8);
           border-radius: 9999px;
         }
       }
@@ -133,10 +239,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             box-shadow:
               0px 5px 50px -5px rgba(0, 0, 0, 0.1),
               0px 0px 0 1px rgba(0, 0, 0, 0.3);
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(10, 10, 15, 0.8);
             backdrop-filter: blur(20px);
             border-width: 1px;
-            border-color: rgba(0, 0, 0);
+            border-color: rgba(255, 255, 255, 0.1);
             padding-left: 0.75rem;
             padding-right: 0.75rem;
             padding-top: 0.25rem;
@@ -144,10 +250,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             display: flex;
             flex-direction: row;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.3);
             border-radius: 9999px;
           }
         }
+      }
+
+      /* Glow effect for accent elements */
+      .glow-amber {
+        box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+      }
+
+      .dark .glow-amber {
+        box-shadow: 0 0 30px rgba(245, 158, 11, 0.2);
       }
     </style>
   </body>

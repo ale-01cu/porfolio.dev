@@ -2,43 +2,80 @@
 import MailIcon from "./icons/Mail.astro";
 import Whatsapp from "./icons/Whatsapp.astro";
 import LinkedInIcon from "./icons/LinkedIn.astro";
+import GitHub from "./icons/GitHub.astro";
 import { getI18N } from "@/i18n/utils";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
+
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  {
+    icon: MailIcon,
+    href: "mailto:alejandro.figueroa.rodriguez.01@gmail.com",
+    label: i18n.FOOTER_EMAIL,
+  },
+  {
+    icon: Whatsapp,
+    href: "https://wa.me/55589662",
+    label: i18n.FOOTER_WHATSAPP,
+  },
+  {
+    icon: LinkedInIcon,
+    href: "https://www.linkedin.com/in/alejandro-figueroa-rodríguez-bb20562aa",
+    label: i18n.FOOTER_LINKEDIN,
+  },
+];
 ---
 
 <footer
   id="contacto"
-  class="opacity-80 m-4 min-[375px]:pl-4 md:pl-0 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
+  class="relative mt-32 border-t border-gray-200/50 dark:border-gray-800/50"
 >
-  <div
-    class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
-  >
-
-    <div></div>
-
-    <ul class="flex gap-4 text-sm font-medium dark:text-white/90">
-      <li>
-        <a class="flex items-center gap-2 hover:border-b border-black/90 transition-all duration-100 dark:border-white/90" href="mailto:alejandro.figueroa.rodriguez.01@gmail.com">
-          <MailIcon class="size-4" />
-          {i18n.FOOTER_EMAIL}
-        </a>
-      </li>
-      <li>
-        <a class="flex items-center gap-2 hover:border-b border-black/90 transition-all duration-100 dark:border-white/90" href="https://wa.me/55589662">
-          <Whatsapp class="!size-4" />
-          {i18n.FOOTER_WHATSAPP}
-        </a>
-      </li>
-      <li>
-        <a class="flex items-center gap-2 hover:border-b border-black/90 transition-all duration-100 dark:border-white/90" href="https://www.linkedin.com/in/alejandro-figueroa-rodríguez-bb20562aa">
-          <LinkedInIcon class="size-4" />
-          {i18n.FOOTER_LINKEDIN}
-        </a>
-      </li>
-    </ul>
-
+  <!-- Gradient background -->
+  <div class="absolute inset-0 bg-gradient-to-t from-gray-100/50 to-transparent dark:from-gray-900/50 pointer-events-none"></div>
   
+  <div class="relative w-full mx-auto container lg:max-w-4xl md:max-w-2xl px-4 py-16">
+    <div class="flex flex-col items-center text-center">
+      <!-- Heading -->
+      <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        ¿Tienes un proyecto en mente?
+      </h3>
+      <p class="text-gray-600 dark:text-gray-400 mb-8 max-w-md">
+        Estoy disponible para nuevas oportunidades. ¡Hablemos!
+      </p>
+
+      <!-- Social links -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        {
+          socialLinks.map(({ icon: Icon, href, label }) => (
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex items-center gap-2 px-5 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-900 rounded-xl border border-gray-200/50 dark:border-gray-800/50 shadow-sm hover:shadow-lg hover:border-amber-500/50 dark:hover:border-amber-500/50 hover:text-amber-600 dark:hover:text-amber-400 transition-all duration-300"
+            >
+              <Icon class="size-5 transition-transform duration-300 group-hover:scale-110" />
+              {label}
+            </a>
+          ))
+        }
+      </div>
+
+      <!-- Divider -->
+      <div class="w-full max-w-xs h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent mb-8"></div>
+
+      <!-- Copyright -->
+      <div class="flex flex-col sm:flex-row items-center gap-2 text-sm text-gray-500 dark:text-gray-500">
+        <span>© {currentYear} Alejandro Figueroa Rodríguez</span>
+        <span class="hidden sm:block">•</span>
+        <span class="flex items-center gap-1">
+          Hecho con
+          <span class="text-red-500 animate-pulse">❤️</span>
+          en Cuba
+        </span>
+      </div>
+    </div>
   </div>
 </footer>

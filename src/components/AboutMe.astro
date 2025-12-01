@@ -6,77 +6,74 @@ const i18n = getI18N({ currentLocale });
 const personalImageAlt = "Alejandro Figueroa Rodríguez";
 ---
 
-<article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
-  <div
-    class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
-  >
-    <p>
-      {i18n.ABOUT_ME_PARAGRAPH_1_1}
-      <strong>{i18n.ABOUT_ME_PARAGRAPH_1_2}</strong>.
-    </p>
+<article class="relative mt-12">
+  <div class="flex flex-col lg:flex-row items-center lg:items-start gap-12">
+    <!-- Image section -->
+    <div class="relative group flex-shrink-0 order-1 lg:order-2">
+      <!-- Decorative background -->
+      <div class="absolute -inset-4 bg-gradient-to-br from-amber-500/20 via-orange-500/10 to-yellow-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+      
+      <!-- Main image container -->
+      <div class="relative">
+        <!-- Decorative frame -->
+        <div class="absolute -inset-2 bg-gradient-to-br from-amber-400 via-orange-500 to-yellow-500 rounded-2xl opacity-20 blur-sm"></div>
+        
+        <img 
+          width="280" 
+          height="280" 
+          src="/me.jpg" 
+          alt={personalImageAlt} 
+          class="relative w-64 lg:w-72 aspect-square object-cover rounded-2xl shadow-2xl ring-1 ring-gray-200/50 dark:ring-gray-800/50 transform rotate-3 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-105"
+          style="object-position: 50% 50%"
+        />
+        
+        <!-- Floating badge -->
+        <div class="absolute -bottom-4 -right-4 bg-white dark:bg-gray-900 rounded-xl p-3 shadow-lg border border-gray-200/50 dark:border-gray-800/50 transform rotate-6 group-hover:rotate-0 transition-transform duration-500">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🇨🇺</span>
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">La Habana</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <p>
-      {i18n.ABOUT_ME_PARAGRAPH_2_1} 
-      <strong>{i18n.ABOUT_ME_PARAGRAPH_2_2}</strong> 
-      {i18n.ABOUT_ME_PARAGRAPH_2_3} 
-      <strong>{i18n.ABOUT_ME_PARAGRAPH_2_4}</strong>
-      {i18n.ABOUT_ME_PARAGRAPH_2_5}
-    </p>
+    <!-- Content section -->
+    <div class="flex-1 order-2 lg:order-1 space-y-6">
+      <div class="prose prose-lg dark:prose-invert max-w-none">
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">
+          {i18n.ABOUT_ME_PARAGRAPH_1_1}
+          <strong class="text-amber-600 dark:text-amber-400 font-semibold">{i18n.ABOUT_ME_PARAGRAPH_1_2}</strong>.
+        </p>
 
-    <p>
-      {i18n.ABOUT_ME_PARAGRAPH_3_1} 
-      <strong>{i18n.ABOUT_ME_PARAGRAPH_3_2}</strong>
-      {i18n.ABOUT_ME_PARAGRAPH_3_3} 
-      <strong>{i18n.ABOUT_ME_PARAGRAPH_3_4}</strong> 
-      {i18n.ABOUT_ME_PARAGRAPH_3_5}
-    </p>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">
+          {i18n.ABOUT_ME_PARAGRAPH_2_1} 
+          <strong class="text-amber-600 dark:text-amber-400 font-semibold">{i18n.ABOUT_ME_PARAGRAPH_2_2}</strong> 
+          {i18n.ABOUT_ME_PARAGRAPH_2_3} 
+          <strong class="text-amber-600 dark:text-amber-400 font-semibold">{i18n.ABOUT_ME_PARAGRAPH_2_4}</strong>
+          {i18n.ABOUT_ME_PARAGRAPH_2_5}
+        </p>
+
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">
+          {i18n.ABOUT_ME_PARAGRAPH_3_1} 
+          <strong class="text-amber-600 dark:text-amber-400 font-semibold">{i18n.ABOUT_ME_PARAGRAPH_3_2}</strong>
+          {i18n.ABOUT_ME_PARAGRAPH_3_3} 
+          <strong class="text-amber-600 dark:text-amber-400 font-semibold">{i18n.ABOUT_ME_PARAGRAPH_3_4}</strong> 
+          {i18n.ABOUT_ME_PARAGRAPH_3_5}
+        </p>
+      </div>
+
+      <!-- Skills/traits badges -->
+      <div class="flex flex-wrap gap-2 pt-4">
+        {['Proactivo', 'Curioso', 'Remoto', 'Fullstack'].map((trait) => (
+          <span class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full border border-gray-200/50 dark:border-gray-700/50">
+            {trait}
+          </span>
+        ))}
+      </div>
+    </div>
   </div>
 
-  <img width="200" height="200" src="/me.jpg" alt={personalImageAlt} 
-    class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20" 
-    style="object-position: 50% 50%">
+  <!-- Decorative elements -->
+  <div class="absolute -top-10 -left-10 w-40 h-40 bg-amber-500/5 rounded-full blur-3xl"></div>
+  <div class="absolute -bottom-10 -right-10 w-60 h-60 bg-orange-500/5 rounded-full blur-3xl"></div>
 </article>
-
-<!-- FRASES PROHIBIDAS EN VUESTRO PORTFOLIO
-
-<p>
-  Mi sueño es encontrar mi primer empleo en el mundo de la programación. Una empresa donde pueda seguir aprendiendo. ❌
-</p>
-
-<p>
-  ❌ Apasionado de la programación desde chekitito. Me encantan los ordenadores y crear páginas web buenas y rápidas con la última tecnología.
-</p>
-
-<p>
-  Trabajo bien en equipo. Siempre estoy aprendiendo cosas nuevas.
-</p>
-
--------------------------------------
-
---------------------------------------
-
-<p>
-  ¡Soy Leo! Estudié Derecho Empresarial y, tras años ejerciendo, me pasé al mundo de la Programación. Desde entonces disfruto creando experiencias web para los usuarios.
-</p>
-
-<p>
-  Entre mis éxitos destaco que durante el Grado Superior, ayudé a mis compañeros a aprender sobre TDD. Me encanta el testing, creo en su importancia, y me gusta compartir mi conocimiento sobre ello.
-</p>
-
-<p>
-  Cuento con experiencia desarrollando aplicaciones móviles, y he creado una iniciativa llamada X para mezclar mis dos pasiones: la programación y el derecho. Ayudando a la sociedad a acceso a una defensa justa.
-</p>
-
----------------------------------------
-
-<p>Me llamo Sara, tengo 25 años y soy de Santiago, Chile 🇨🇱. Terminé mis estudios como Desarrolladora Web. Me encanta enfocarme en la parte del rendimiento, para ofrecer la mejora experiencia al usuario.</p>
-
-<p>
-  Colaboro en la organización del MeetUp local BeerJS donde reunimos a desarrolladores de Santiago para compartir conocimiento y experiencias. El año 2023 hicimos un total de 25 charlas con más de 2000 asistentes.
-</p>
-
-<p>
-  Además de participar activamente en la comunidad, he participado en la Hackathon de Midudev quedando en 3er puesto con mi proyecto _Chatty_, donde usando IA podías interactuar con un PDF. ¡Échale un vistazo!
-</p>
-
--->

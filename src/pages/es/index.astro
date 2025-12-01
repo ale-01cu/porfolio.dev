@@ -21,35 +21,34 @@ const i18n = getI18N({ currentLocale });
   description="Ingeniero de Software con 5 años de experiencia. Especializado en el desarrollo de aplicaciones web únicas. Contáctame para crear tu aplicación web o móvil."
 >
   <main class="px-4">
-    <SectionContainer class="py-16 md:py-36">
-      <Hero>
-      </slot>
-    </Hero>
-    </SectionContainer>
-    <div class="space-y-24">
-    <SectionContainer id="experiencia">
-      <TitleSection>
-        <Briefcase class="size-8" />
-        {i18n.EXPERIENCE_SECTION_TITLE}
-      </TitleSection>
-      <Experience />
+    <SectionContainer class="py-20 md:py-44 min-h-[calc(100vh-80px)] flex items-center">
+      <Hero />
     </SectionContainer>
 
-    <SectionContainer id="proyectos">
-      <TitleSection>
-        <CodeIcon class="size-7" />
-        {i18n.PROJECTS_SECTION_TITLE}
-      </TitleSection>
-      <Projects />
-    </SectionContainer>
+    <div class="space-y-32">
+      <SectionContainer id="experiencia">
+        <TitleSection>
+          <Briefcase class="size-6" />
+          {i18n.EXPERIENCE_SECTION_TITLE}
+        </TitleSection>
+        <Experience />
+      </SectionContainer>
 
-    <SectionContainer id="sobre-mi">
-      <TitleSection>
-        <ProfileCheck class="size-8" />
-        {i18n.ABOUT_ME_SECTION_TITLE}
-      </TitleSection>
-      <AboutMe />
-    </SectionContainer>
-  </div>
+      <SectionContainer id="proyectos">
+        <TitleSection>
+          <CodeIcon class="size-6" />
+          {i18n.PROJECTS_SECTION_TITLE}
+        </TitleSection>
+        <Projects />
+      </SectionContainer>
+
+      <SectionContainer id="sobre-mi">
+        <TitleSection>
+          <ProfileCheck class="size-6" />
+          {i18n.ABOUT_ME_SECTION_TITLE}
+        </TitleSection>
+        <AboutMe />
+      </SectionContainer>
+    </div>
   </main>
 </Layout>
