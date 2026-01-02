@@ -26,7 +26,7 @@ const i18n = getI18N({ currentLocale });
 
 const TAGS = {
   NEXT: {
-    name: "Next.js",
+    name: "Next JS",
     class: "bg-black/80 text-white border-gray-700",
     icon: NextJS,
   },
@@ -122,6 +122,12 @@ const PROJECTS = [
     featured: true,
   },
   {
+    title: i18n.PROJECT_ESICUBA_TITLE,
+    description: i18n.PROJECT_ESICUBA_DESCRIPTION,
+    image: '/projects/esicuba.webp',
+    tags: [TAGS.NEXT, TAGS.REACT, TAGS.TAILWIND],
+  },
+  {
     title: 'OpiCuba',
     description: i18n.PROJECT_OPICUBA_DESCRIPTION,
     github: "https://github.com/ale-01cu/z17-MITRANS",
@@ -129,14 +135,14 @@ const PROJECTS = [
     tags: [TAGS.REACTROUTER, TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO, TAGS.DJANGOREST, TAGS.POSTGRES],
   },
   {
-    title: 'Bot de Facebook Messenger',
+    title: i18n.PROJECT_MESSENGER_BOT_TITLE,
     description: i18n.PROJECT_MESSENGER_BOT_DESCRIPTION,
     github: "https://github.com/ale-01cu/z17-MITRANS/tree/main/machine_learning/bot",
     image: '/projects/messenger.webp',
     tags: [TAGS.PYTHON, TAGS.OPENCV],
   },
   {
-    title: 'Sistema de Recomendación',
+    title: i18n.PROJECT_RECOMMENDATION_SYSTEM_TITLE,
     description: i18n.PROJECT_RECOMMENDATION_SYSTEM_DESCRIPTION,
     github: "https://github.com/ale-01cu/Picta-Project/tree/main/recommender_engine/backend",
     image: '/projects/Recommender.webp',
