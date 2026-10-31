@@ -40,15 +40,46 @@
   "PROJECT_MAGIC_DESCRIPTION": "Se trata de una plataforma de comercio electrónico integral con un backend basado en el framework REST de Django y un frontend basado en React. Incluye un conjunto completo de funciones para una tienda online moderna, desde la autenticación de usuarios hasta un sistema de recomendación de productos.",
   "PROJECT_MEATCHEF_DESCRIPTION": "MeatChef's Kitchen es una aplicación integral diseñada como plataforma en línea para una carnicería premium. Combina un sistema de comercio electrónico para productos cárnicos con un sistema de gestión del aprendizaje para cursos de cocina. La plataforma admite diversos roles de usuario, como clientes, personal, profesores y administradores, cada uno con permisos y funcionalidades personalizadas.",
   "PROJECT_ESICUBA_DESCRIPTION": "Aplicación web administrativa desarrollada para la gestión de seguros. El sistema permite la administración de usuarios, roles, compañías, empleados y oficinas, implementando un diseño moderno, autenticación robusta y una arquitectura modular escalable.",
+  "PROJECT_ASEREAI_DESCRIPTION": "Proyecto personal en etapa experimental, todavía sin usuarios y con visión de convertirse en producto. Combina una API de IA con endpoints compatibles con OpenAI y un CLI para configurar y sincronizar modelos de AsereAI en OpenCode.",
+  "PROJECT_EMPACA_DESCRIPTION": "CLI de Python que prepara contexto compacto a partir de proyectos de código para usarlo en chats y asistentes de IA. Sigue imports y dependencias, y permite seleccionar archivos por relevancia semántica.",
+  "PROJECT_CODEXCO_DESCRIPTION": "Monitor local y liviano de sesiones de OpenAI Codex CLI: desglosa tokens y costos por modelo, distingue tokens cacheados y puede seguir una sesión activa en tiempo real.",
+  "PROJECT_DEDOMENA_DESCRIPTION": "Landing principal de DedomenaAI construida con Next.js y Strapi. Todo el contenido y los textos se gestionan desde el CMS, con páginas para las soluciones de datos e inteligencia artificial de la empresa.",
+  "PROJECT_SKINSAGE_DESCRIPTION": "Aplicación full stack para profesionales de estética, dermatólogos y clínicas. Analiza imágenes de la piel con inteligencia artificial y genera informes y recomendaciones, con gestión de pacientes y suscripciones.",
   "PROJECT_CODE_BUTTON": "Code",
   "PROJECT_PREVIEW_BUTTON": "Preview",
   "EXPERIENCE_ITEM_MORE_INFO": "Saber más",
-  "EXPERIENCE_DIXBASE_TITLE": "Principal Frontend Engineer",
-  "EXPERIENCE_DIXBASE_DESCRIPTION": "Principal responsable del desarrollo frontend de la empresa, liderando el diseño, implementación y optimización de la interfaz de usuario para todos los sistemas internos y externos. Encargado de la arquitectura y lógica del lado del cliente, asegurando un alto rendimiento, accesibilidad y experiencia de usuario consistente en todos los proyectos.",
-  "EXPERIENCE_Z17_TITLE": "Desarrollador Fullstack",
-  "EXPERIENCE_Z17_DESCRIPTION": "Desarrollo integral de aplicaciones y sistemas de cualquier tipo, tanto frontend como backend, adaptados a las necesidades de los clientes. Participación en todas las fases del ciclo de vida del software, desde la planificación hasta el despliegue y mantenimiento.",
-  "EXPERIENCE_DIXBASE_DATE": "Junio 2024 - Actualmente...",
-  "EXPERIENCE_Z17_DATE": "Enero 2025 - Actualmente...",
+  "EXPERIENCE_DEDOMENAAI_TITLE": "Desarrollador Full Stack",
+  "EXPERIENCE_DEDOMENAAI_DATE": "Febrero 2026 – Actualidad",
+  "EXPERIENCE_DEDOMENAAI_POINTS": [
+    "Desarrollé la landing principal de la empresa con Next.js y Strapi como CMS headless. Todo el contenido y los textos se gestionan desde el CMS, sin contenido estático en el frontend.",
+    "Diseño y mantengo soluciones de frontend y backend para los productos de la empresa."
+  ],
+  "EXPERIENCE_SKINSAGEPROAI_TITLE": "Desarrollador Full Stack",
+  "EXPERIENCE_SKINSAGEPROAI_DATE": "Febrero 2026 – Actualidad",
+  "EXPERIENCE_SKINSAGEPROAI_POINTS": [
+    "Soy el único desarrollador del proyecto y estoy a cargo de todo el stack: frontend, backend, base de datos, despliegues, mantenimiento y arquitectura del producto.",
+    "Desarrollé funcionalidades impulsadas por IA con modelos de OpenAI y pipelines RAG (generación aumentada por recuperación).",
+    "Stack: Next.js, FastAPI, PostgreSQL, pipelines de datos y Google Cloud Platform para despliegue e infraestructura."
+  ],
+  "EXPERIENCE_DIXBASE_TITLE": "Ingeniero Principal de Frontend",
+  "EXPERIENCE_DIXBASE_POINTS": [
+    "Lideré el desarrollo frontend de la empresa.",
+    "Diseñé e implementé interfaces de usuario (UI).",
+    "Optimicé el rendimiento y mejoré la experiencia de usuario (UX).",
+    "Desarrollé la arquitectura del lado del cliente y la lógica de las aplicaciones.",
+    "Aseguré la accesibilidad y consistencia en todos los proyectos."
+  ],
+  "EXPERIENCE_Z17_TITLE": "Desarrollador Full-Stack",
+  "EXPERIENCE_Z17_COMPANY": "Empresa Mixta Z17",
+  "EXPERIENCE_Z17_POINTS": [
+    "Desarrollé aplicaciones y sistemas full stack.",
+    "Creé soluciones personalizadas para clientes.",
+    "Implementé componentes de frontend y backend.",
+    "Gestioné el ciclo de vida completo del software.",
+    "Participé en la planificación, despliegue y mantenimiento de proyectos."
+  ],
+  "EXPERIENCE_DIXBASE_DATE": "Junio 2024 – Marzo 2026",
+  "EXPERIENCE_Z17_DATE": "Enero 2025 – Agosto 2026",
   "PROJECT_ESICUBA_TITLE": "Sistema de Seguros",
   "PROJECT_MESSENGER_BOT_TITLE": "Bot de Facebook Messenger",
   "PROJECT_RECOMMENDATION_SYSTEM_TITLE": "Sistema de Recomendación"

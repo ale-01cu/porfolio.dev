@@ -40,15 +40,46 @@
   "PROJECT_MAGIC_DESCRIPTION": "This is a comprehensive e-commerce platform with a backend based on the Django REST framework and a frontend based on React. It includes a full set of features for a modern online store, from user authentication to a product recommendation system.",
   "PROJECT_MEATCHEF_DESCRIPTION": "MeatChef's Kitchen is a comprehensive application designed as an online platform for a premium butcher shop. It combines an e-commerce system for meat products with a learning management system for cooking courses. The platform supports various user roles, such as customers, staff, teachers, and administrators, each with custom permissions and functionalities.",
   "PROJECT_ESICUBA_DESCRIPTION": "Administrative web application developed for insurance management. The system enables the administration of users, roles, companies, employees, and offices, implementing a modern design, robust authentication, and a scalable modular architecture.",
+  "PROJECT_ASEREAI_DESCRIPTION": "A personal experimental project, currently without users and with the ambition to become a product. It combines an AI API with OpenAI-compatible endpoints and a CLI for configuring and syncing AsereAI models with OpenCode.",
+  "PROJECT_EMPACA_DESCRIPTION": "A Python CLI that turns code projects into compact context for AI chats and assistants. It follows imports and dependencies, and can select files by semantic relevance.",
+  "PROJECT_CODEXCO_DESCRIPTION": "A lightweight local monitor for OpenAI Codex CLI sessions: it breaks down tokens and costs by model, separates cached tokens, and can watch an active session in real time.",
+  "PROJECT_DEDOMENA_DESCRIPTION": "DedomenaAI's main landing page built with Next.js and Strapi. All page content and copy are managed through the CMS, with pages for the company's data and AI solutions.",
+  "PROJECT_SKINSAGE_DESCRIPTION": "A full-stack application for estheticians, dermatologists, and clinics. It analyzes skin images with AI and generates reports and recommendations, alongside patient and subscription management.",
   "PROJECT_CODE_BUTTON": "Code",
   "PROJECT_PREVIEW_BUTTON": "Preview",
   "EXPERIENCE_ITEM_MORE_INFO": "Learn more",
+  "EXPERIENCE_DEDOMENAAI_TITLE": "Full Stack Developer",
+  "EXPERIENCE_DEDOMENAAI_DATE": "Feb 2026 – Present",
+  "EXPERIENCE_DEDOMENAAI_POINTS": [
+    "Built the company's main landing page using Next.js and a Strapi headless CMS, with all content and copy fully data-driven and no static content in the frontend.",
+    "Design and maintain both frontend and backend solutions for the company's products."
+  ],
+  "EXPERIENCE_SKINSAGEPROAI_TITLE": "Full Stack Developer",
+  "EXPERIENCE_SKINSAGEPROAI_DATE": "Feb 2026 – Present",
+  "EXPERIENCE_SKINSAGEPROAI_POINTS": [
+    "Sole developer on the project, owning the entire stack: frontend, backend, database, deployments, maintenance, and product architecture.",
+    "Built AI-powered features using OpenAI models and RAG (Retrieval-Augmented Generation) pipelines.",
+    "Stack: Next.js, FastAPI, PostgreSQL, data pipelines, and Google Cloud Platform for deployment and infrastructure."
+  ],
   "EXPERIENCE_DIXBASE_TITLE": "Principal Frontend Engineer",
-  "EXPERIENCE_DIXBASE_DESCRIPTION": "Mainly responsible for the company's frontend development, leading the design, implementation, and optimization of the user interface for all internal and external systems. In charge of the client-side architecture and logic, ensuring high performance, accessibility, and a consistent user experience across all projects.",
-  "EXPERIENCE_Z17_TITLE": "Fullstack Developer",
-  "EXPERIENCE_Z17_DESCRIPTION": "Comprehensive development of applications and systems of any type, both frontend and backend, adapted to the clients' needs. Participation in all phases of the software life cycle, from planning to deployment and maintenance.",
-  "EXPERIENCE_DIXBASE_DATE": "June 2024 - Present...",
-  "EXPERIENCE_Z17_DATE": "January 2025 - Present...",
+  "EXPERIENCE_DIXBASE_POINTS": [
+    "Led the company's frontend development.",
+    "Designed and implemented user interfaces (UI).",
+    "Optimized performance and improved user experience (UX).",
+    "Developed client-side architecture and application logic.",
+    "Ensured accessibility and consistency across all projects."
+  ],
+  "EXPERIENCE_Z17_TITLE": "Full-Stack Developer",
+  "EXPERIENCE_Z17_COMPANY": "Z17 Joint Venture Company",
+  "EXPERIENCE_Z17_POINTS": [
+    "Developed full-stack applications and systems.",
+    "Created custom solutions for clients.",
+    "Implemented both frontend and backend components.",
+    "Managed the complete software development lifecycle.",
+    "Planned, deployed, and maintained projects."
+  ],
+  "EXPERIENCE_DIXBASE_DATE": "June 2024 – March 2026",
+  "EXPERIENCE_Z17_DATE": "January 2025 – August 2026",
   "PROJECT_ESICUBA_TITLE": "Insurance System",
   "PROJECT_MESSENGER_BOT_TITLE": "Facebook Messenger Bot",
   "PROJECT_RECOMMENDATION_SYSTEM_TITLE": "Recommendation System"

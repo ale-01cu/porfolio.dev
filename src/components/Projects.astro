@@ -3,6 +3,7 @@ import GitHub from "./icons/GitHub.astro";
 import NextJS from "./icons/NextJS.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import Link from "./icons/Link.astro";
+import CodeIcon from "./icons/Code.astro";
 import LinkButton from "./LinkButton.astro";
 import ReactJS from "./icons/ReactJS.astro";
 import AstroJS from "./icons/AstroJS.astro";
@@ -70,6 +71,21 @@ const TAGS = {
     class: "bg-yellow-500/20 text-yellow-300 border-yellow-500/30",
     icon: Python,
   },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-blue-500/20 text-blue-300 border-blue-500/30",
+    icon: CodeIcon,
+  },
+  RUST: {
+    name: "Rust",
+    class: "bg-orange-500/20 text-orange-300 border-orange-500/30",
+    icon: CodeIcon,
+  },
+  STRAPI: {
+    name: "Strapi",
+    class: "bg-violet-500/20 text-violet-300 border-violet-500/30",
+    icon: CodeIcon,
+  },
   TENSORFLOW: {
     name: "TensorFlow",
     class: "bg-orange-500/20 text-orange-300 border-orange-500/30",
@@ -117,9 +133,46 @@ const PROJECTS = [
     title: 'DixBase',
     description: i18n.PROJECT_DIXBASE_DESCRIPTION,
     link: 'https://dixbase.com',
-    image: '/projects/dixbase_logo2.webp',
+    image: "/projects/dixbase-real.png",
     tags: [TAGS.VITE, TAGS.REACT, TAGS.REACTROUTER, TAGS.TAILWIND],
     featured: true,
+  },
+  {
+    title: "DedomenaAI",
+    description: i18n.PROJECT_DEDOMENA_DESCRIPTION,
+    link: "https://dedomena.ai",
+    image: "/projects/dedomena-real.jpg",
+    tags: [TAGS.NEXT, TAGS.REACT, TAGS.TAILWIND, TAGS.STRAPI],
+  },
+  {
+    title: "SkinSageProAI",
+    description: i18n.PROJECT_SKINSAGE_DESCRIPTION,
+    link: "https://app.skinsagepro.ai/",
+    image: "/projects/skinsagepro-real.jpg",
+    tags: [TAGS.NEXT, TAGS.REACT, TAGS.TAILWIND, TAGS.FASTAPI, TAGS.PYTHON, TAGS.POSTGRES],
+  },
+  {
+    title: "AsereAI",
+    description: i18n.PROJECT_ASEREAI_DESCRIPTION,
+    github: "https://github.com/ale-01cu/AsereAI",
+    githubLabel: "API",
+    githubCli: "https://github.com/ale-01cu/asereai-cli",
+    image: "/projects/asereai.svg",
+    tags: [TAGS.FASTAPI, TAGS.PYTHON, TAGS.TYPESCRIPT],
+  },
+  {
+    title: "Empaca",
+    description: i18n.PROJECT_EMPACA_DESCRIPTION,
+    github: "https://github.com/ale-01cu/ctx-pack",
+    image: "/projects/empaca.svg",
+    tags: [TAGS.PYTHON],
+  },
+  {
+    title: "CodexCo",
+    description: i18n.PROJECT_CODEXCO_DESCRIPTION,
+    github: "https://github.com/ale-01cu/codexco",
+    image: "/projects/codexco.svg",
+    tags: [TAGS.RUST],
   },
   {
     title: i18n.PROJECT_ESICUBA_TITLE,
@@ -181,7 +234,7 @@ const PROJECTS = [
 
 <div class="flex flex-col gap-8 mt-12">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github, featured }, index) => (
+    PROJECTS.map(({ image, title, description, tags, link, github, githubCli, githubLabel, featured }, index) => (
       <article 
         class={`project-card group relative overflow-hidden rounded-3xl bg-white/50 dark:bg-gray-900/50 border border-gray-200/50 dark:border-gray-800/50 backdrop-blur-sm transition-all duration-500 hover:border-amber-500/30 hover:shadow-2xl hover:shadow-amber-500/10 ${featured ? 'md:col-span-2' : ''}`}
         style={`animation-delay: ${index * 100}ms`}
@@ -237,7 +290,13 @@ const PROJECTS = [
               {github && (
                 <LinkButton href={github}>
                   <GitHub class="size-5" />
-                  <span>{i18n.PROJECT_CODE_BUTTON}</span>
+                  <span>{githubLabel ?? i18n.PROJECT_CODE_BUTTON}</span>
+                </LinkButton>
+              )}
+              {githubCli && (
+                <LinkButton href={githubCli}>
+                  <GitHub class="size-5" />
+                  <span>CLI</span>
                 </LinkButton>
               )}
               {link && (
